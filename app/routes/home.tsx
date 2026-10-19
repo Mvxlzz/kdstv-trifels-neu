@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="on-dark relative isolate h-[calc(100svh-7rem)] min-h-[32rem] overflow-hidden bg-navy text-white lg:h-[calc(100svh-12.25rem)]">
+      <section className="on-dark relative isolate h-[calc(100svh-4.3rem)] min-h-[32rem] overflow-hidden bg-navy text-white">
         <div aria-hidden className="absolute inset-0 -z-10">
           {heroBilder.map((b, i) => (
             <img
