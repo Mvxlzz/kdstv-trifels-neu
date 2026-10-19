@@ -32,12 +32,12 @@ export default function Trifelshaus() {
             <p className="max-w-lg text-lg text-silber">
               Unser Haus in Schwabing hat sieben Zimmer und bietet alles, was man als Student braucht. Vielleicht auch ein bisschen mehr.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
               <Link to="/kontakt?betreff=zimmer" className="btn-blau">
                 Zimmer anfragen
               </Link>
-              <a href="#impressionen" className="btn-outline-light">
-                Bilder ansehen
+              <a href="#impressionen" className="pfeil">
+                Bilder ansehen <span aria-hidden>↓</span>
               </a>
             </div>
           </div>
@@ -47,22 +47,31 @@ export default function Trifelshaus() {
         </div>
       </section>
 
-      <section className="py-20" aria-labelledby="ausstattung">
-        <Container className="grid gap-10">
-          <div className="grid max-w-2xl gap-3">
+      <section className="py-20 sm:py-28" aria-labelledby="ausstattung">
+        <Container className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-20">
+          <div className="grid content-start gap-6">
             <p className="eyebrow">Wohnen mit Gemeinschaft</p>
-            <h2 id="ausstattung" className="text-4xl sm:text-5xl">
+            <h2 id="ausstattung" className="text-5xl sm:text-7xl">
               Was das Haus bietet
             </h2>
+            <p className="max-w-md text-lg text-grau">
+              Wer im Trifelshaus wohnt, hat ein eigenes Zimmer und teilt Küche, Saal und Garten mit den Bundesbrüdern.
+            </p>
+            <Link to="/kontakt?betreff=zimmer" className="pfeil mt-4 font-serif text-3xl font-medium">
+              Zimmer anfragen <span aria-hidden>↗</span>
+            </Link>
           </div>
-          <dl className="grid gap-px border border-linie bg-linie sm:grid-cols-2 lg:grid-cols-3">
-            {fakten.map((f) => (
-              <div key={f.titel} className="grid content-start gap-2 bg-white p-7">
-                <dt className="font-serif text-2xl font-semibold text-navy">{f.titel}</dt>
-                <dd className="text-grau">{f.text}</dd>
-              </div>
-            ))}
-          </dl>
+          <div className="on-dark bg-navy p-7 text-white sm:p-10">
+            <p className="marke">Im Haus</p>
+            <dl className="mt-4">
+              {fakten.map((f) => (
+                <div key={f.titel} className="grid gap-1 border-b border-white/15 py-5 last:border-b-0 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6">
+                  <dt className="font-semibold text-white">{f.titel}</dt>
+                  <dd className="text-silber">{f.text}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </Container>
       </section>
 
@@ -110,11 +119,11 @@ export default function Trifelshaus() {
             <p className="text-grau">In Schwabing, wenige Schritte vom Englischen Garten.</p>
           </div>
           <a
-            className="btn-outline w-fit"
+            className="pfeil"
             href="https://www.openstreetmap.org/search?query=Dunantstra%C3%9Fe%206%2C%2080805%20M%C3%BCnchen"
             rel="noopener"
           >
-            Auf der Karte öffnen
+            Auf der Karte öffnen <span aria-hidden>↗</span>
           </a>
         </Container>
       </section>

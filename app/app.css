@@ -32,6 +32,8 @@
     @apply bg-papier font-sans text-schwarz antialiased;
     font-size: 1.0625rem;
     line-height: 1.6;
+    /* Cormorant setzt sonst Mediävalziffern, Jahreszahlen sollen gleich hoch stehen */
+    font-variant-numeric: lining-nums;
   }
   h1, h2, h3 {
     @apply font-serif text-navy;
@@ -50,16 +52,40 @@
   }
 }
 
+/* Kleine Rubrik über Überschriften: ruhig, normale Schreibweise, keine blauen Versalien */
 @utility eyebrow {
-  @apply text-xs font-bold text-tief uppercase;
-  letter-spacing: 0.16em;
+  @apply font-sans text-[0.95rem] font-medium text-grau;
   :where(.on-dark) & {
-    color: var(--color-blau);
+    color: var(--color-silber);
+  }
+}
+
+/* Metadaten wie Datum, Ort, Nummern: gleich breite Ziffern */
+@utility marke {
+  @apply text-sm text-grau;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: 0.02em;
+  :where(.on-dark) & {
+    color: var(--color-silber);
+  }
+}
+
+/* Textlink mit Pfeil statt zweitem Knopf */
+@utility pfeil {
+  @apply inline-flex w-fit items-center gap-2 font-semibold text-tief underline decoration-transparent decoration-1 underline-offset-[6px] transition-colors hover:decoration-current;
+  :where(.on-dark) & {
+    color: var(--color-white);
+  }
+  & > [aria-hidden] {
+    transition: transform 0.2s;
+  }
+  &:hover > [aria-hidden] {
+    transform: translateX(3px);
   }
 }
 
 @utility btn {
-  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm px-5 text-[0.95rem] font-semibold transition-colors;
+  @apply inline-flex min-h-12 items-center justify-center gap-2 px-6 text-[0.95rem] font-semibold transition-colors;
 }
 
 @utility btn-primary {
@@ -97,21 +123,12 @@
   }
 }
 
-/* Startbild: fünf Fotos überblenden nacheinander, je 6 s sichtbar */
-@keyframes hero-fade {
-  0% { opacity: 0; }
-  4% { opacity: 1; }
-  20% { opacity: 1; }
-  24% { opacity: 0; }
-  100% { opacity: 0; }
+/* Startbild: Fortschrittsbalken unter den Fotos, ein Durchlauf = 6 s */
+@keyframes hero-fortschritt {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
-.hero-slide {
-  opacity: 0;
-  animation: hero-fade 30s infinite;
-}
-.hero-slide:first-child {
-  opacity: 1;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-slide { animation: none; }
+.hero-balken {
+  transform-origin: left;
+  animation: hero-fortschritt 6s linear forwards;
 }

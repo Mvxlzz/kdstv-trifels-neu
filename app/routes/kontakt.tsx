@@ -15,7 +15,7 @@ const betreffe = {
 } as const;
 type Betreff = keyof typeof betreffe;
 
-const feld = "mt-2 block w-full rounded-sm border border-rand bg-white px-4 py-3 text-base text-schwarz";
+const feld = "mt-2 block w-full border border-rand bg-white px-4 py-3 text-base text-schwarz";
 
 export default function Kontakt() {
   const [params] = useSearchParams();

@@ -46,7 +46,7 @@ export default function Semesterprogramm() {
             <h2 className="text-4xl sm:text-5xl">{s.titel}</h2>
             {nachMonat(s.termine).map(([key, termine]) => (
               <div key={key} className="grid gap-4 lg:grid-cols-[12rem_1fr]">
-                <h3 className="font-sans text-sm font-bold uppercase tracking-[0.16em] text-tief lg:pt-6">{monatJahr.format(new Date(`${key}-01T00:00:00Z`))}</h3>
+                <h3 className="font-serif text-2xl font-medium text-navy lg:pt-4">{monatJahr.format(new Date(`${key}-01T00:00:00Z`))}</h3>
                 <TerminListe termine={termine} details />
               </div>
             ))}

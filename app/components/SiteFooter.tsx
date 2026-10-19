@@ -11,13 +11,13 @@ export function SiteFooter() {
             <Zirkel className="h-12 w-12 text-silber" />
             <div>
               <p className="font-serif text-2xl font-semibold leading-none">{site.name}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.25em] text-blau">{site.city} · seit {site.founded}</p>
+              <p className="marke mt-1">{site.city} · seit {site.founded}</p>
             </div>
           </div>
           <p className="max-w-sm text-sm">{site.fullName}. Mitglied im Cartellverband der katholischen deutschen Studentenverbindungen (CV).</p>
         </div>
         <div>
-          <h2 className="font-sans text-xs font-bold uppercase tracking-[0.16em] text-white">Seiten</h2>
+          <h2 className="eyebrow">Seiten</h2>
           <ul className="mt-4 grid gap-2 text-sm">
             {mainNav.map((n) => (
               <li key={n.to}>
@@ -34,7 +34,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h2 className="font-sans text-xs font-bold uppercase tracking-[0.16em] text-white">Kontakt</h2>
+          <h2 className="eyebrow">Kontakt</h2>
           <address className="mt-4 grid gap-2 text-sm not-italic">
             <span>Trifelshaus</span>
             <span>

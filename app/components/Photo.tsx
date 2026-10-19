@@ -26,7 +26,7 @@ export function Photo({ name, className = "", position = "center", eager = false
         aria-label={m.alt}
         className={`flex items-end bg-[repeating-linear-gradient(135deg,#d9d8d6_0_10px,#e3e2e0_10px_20px)] p-3 ${className}`}
       >
-        <span className="rounded-sm bg-white/90 px-2 py-1 text-xs font-semibold">Foto folgt</span>
+        <span className="bg-white/90 px-2 py-1 text-xs font-semibold">Foto folgt</span>
       </div>
     );
   }

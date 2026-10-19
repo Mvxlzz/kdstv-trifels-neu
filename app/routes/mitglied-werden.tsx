@@ -32,12 +32,12 @@ export default function MitgliedWerden() {
             Studenten aller Fächer, die zusammen feiern, lernen und füreinander einstehen. Ob du dazugehören willst, findest du am besten bei einem Abend auf
             dem Haus heraus.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
             <Link to="/kontakt?betreff=kennenlernen" className="btn-primary">
               Kennenlernen vereinbaren
             </Link>
-            <Link to="/semesterprogramm" className="btn-outline">
-              Offene Abende
+            <Link to="/semesterprogramm" className="pfeil">
+              Offene Abende <span aria-hidden>→</span>
             </Link>
           </div>
         </div>
@@ -54,31 +54,38 @@ export default function MitgliedWerden() {
             ["3", "Prinzipien: Religio, Scientia, Amicitia"],
             ["CV", "Teil des Cartellverbands"],
           ].map(([zahl, text]) => (
-            <li key={zahl} className="grid gap-1 border-white/10 px-6 py-8 odd:border-r lg:border-r">
-              <span className="font-serif text-5xl font-semibold text-blau">{zahl}</span>
-              <span className="text-sm text-silber">{text}</span>
+            <li key={zahl} className="grid content-start gap-2 border-white/15 px-5 py-10 odd:border-r sm:px-8 lg:border-r lg:px-12 lg:last:border-r-0 xl:px-16">
+              <span className="font-serif text-6xl leading-none font-medium text-white sm:text-7xl">{zahl}</span>
+              <span className="marke">{text}</span>
             </li>
           ))}
         </ul>
       </section>
 
-      <section className="py-20" aria-labelledby="ablauf">
-        <Container className="grid gap-10">
-          <div className="grid max-w-2xl gap-3">
+      <section className="py-20 sm:py-28" aria-labelledby="ablauf">
+        <Container className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:gap-20">
+          <div className="grid content-start gap-3 lg:sticky lg:top-28 lg:self-start">
             <p className="eyebrow">So läuft es ab</p>
-            <h2 id="ablauf" className="text-4xl sm:text-5xl">
+            <h2 id="ablauf" className="text-5xl sm:text-7xl">
               Vier Schritte, kein Druck
             </h2>
           </div>
-          <ol className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {schritte.map((s, i) => (
-              <li key={s.titel} className="grid content-start gap-3 border border-linie bg-white p-7">
-                <span className="font-serif text-5xl font-semibold text-tief">{i + 1}</span>
-                <h3 className="text-2xl">{s.titel}</h3>
-                <p className="text-grau">{s.text}</p>
-              </li>
-            ))}
-          </ol>
+          <div className="grid gap-10">
+            <ol className="border-t border-rand/50">
+              {schritte.map((s, i) => (
+                <li key={s.titel} className="grid gap-2 border-b border-rand/50 py-8 sm:grid-cols-[5rem_minmax(0,1fr)]">
+                  <span className="marke pt-1 text-schwarz">{String(i + 1).padStart(2, "0")}</span>
+                  <div className="grid gap-2">
+                    <h3 className="text-3xl font-medium">{s.titel}</h3>
+                    <p className="max-w-xl text-lg text-grau">{s.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            <Link to="/kontakt?betreff=kennenlernen" className="btn-primary w-full sm:w-fit sm:min-w-72">
+              Kennenlernen vereinbaren
+            </Link>
+          </div>
         </Container>
       </section>
 
@@ -90,8 +97,8 @@ export default function MitgliedWerden() {
               Was du dich vielleicht fragst
             </h2>
             <p className="text-grau">Deine Frage fehlt?</p>
-            <Link to="/kontakt?betreff=kennenlernen" className="link w-fit">
-              Schreib uns
+            <Link to="/kontakt?betreff=kennenlernen" className="pfeil">
+              Schreib uns <span aria-hidden>→</span>
             </Link>
           </div>
           <FaqListe />
