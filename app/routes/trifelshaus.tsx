@@ -25,8 +25,8 @@ export default function Trifelshaus() {
   return (
     <>
       <section className="on-dark bg-navy text-white">
-        <div className="mx-auto grid max-w-6xl lg:grid-cols-[1.1fr_1fr]">
-          <div className="grid content-center gap-6 px-6 py-16 sm:px-12 lg:px-16">
+        <div className="grid lg:grid-cols-2">
+          <div className="grid content-center gap-6 px-6 py-16 sm:px-12 lg:px-16 xl:px-24 [&>*]:max-w-2xl">
             <p className="eyebrow">Trifelshaus & Zimmer</p>
             <h1 className="text-4xl text-white sm:text-6xl">Mehr als eine Wohngemeinschaft</h1>
             <p className="max-w-lg text-lg text-silber">
@@ -41,7 +41,7 @@ export default function Trifelshaus() {
               </a>
             </div>
           </div>
-          <div className="relative aspect-[4/5] lg:aspect-auto lg:min-h-[36rem]">
+          <div className="relative aspect-[4/5] lg:aspect-auto lg:h-[82vh] lg:max-h-[56rem] lg:min-h-[36rem]">
             <Photo name="hausFlagge" className="absolute inset-0 h-full w-full" eager />
           </div>
         </div>

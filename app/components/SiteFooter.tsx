@@ -5,7 +5,7 @@ import { Zirkel } from "./Zirkel";
 export function SiteFooter() {
   return (
     <footer className="on-dark bg-navy text-silber">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-[112rem] gap-10 px-5 py-14 sm:px-8 lg:px-12 xl:px-16 md:grid-cols-[1.4fr_1fr_1fr]">
         <div className="grid content-start gap-4">
           <div className="flex items-center gap-3 text-white">
             <Zirkel className="h-12 w-12 text-silber" />
@@ -50,7 +50,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-5 text-sm sm:px-8">
+        <div className="mx-auto flex max-w-[112rem] flex-wrap items-center justify-between gap-4 px-5 py-5 text-sm sm:px-8 lg:px-12 xl:px-16">
           <p>© {new Date().getFullYear()} {site.name}</p>
           <ul className="flex flex-wrap gap-5">
             <li>

@@ -14,7 +14,7 @@ export const werte = [
 export function WerteBand() {
   return (
     <section aria-label="Unsere Prinzipien" className="border-y border-linie bg-white">
-      <ul className="mx-auto grid max-w-6xl divide-linie sm:grid-cols-3 sm:divide-x">
+      <ul className="grid divide-linie sm:grid-cols-3 sm:divide-x">
         {werte.map((w) => (
           <li key={w.name} className="grid gap-1 px-6 py-7 text-center">
             <span className="font-serif text-3xl font-semibold italic text-tief">{w.name}</span>
@@ -120,10 +120,10 @@ export function BildText({
 }) {
   return (
     <div className="grid bg-papier md:grid-cols-2">
-      <div className={`relative min-h-80 md:min-h-[28rem] ${reverse ? "md:order-2" : ""}`}>
+      <div className={`relative min-h-80 md:min-h-[32rem] xl:min-h-[40rem] ${reverse ? "md:order-2" : ""}`}>
         <Photo name={bild} position={position} className="absolute inset-0 h-full w-full" />
       </div>
-      <div className="grid content-center gap-4 px-6 py-12 sm:px-12 lg:px-16">{children}</div>
+      <div className="grid content-center gap-4 px-6 py-12 sm:px-12 lg:px-16 xl:px-24 [&>*]:max-w-2xl">{children}</div>
     </div>
   );
 }

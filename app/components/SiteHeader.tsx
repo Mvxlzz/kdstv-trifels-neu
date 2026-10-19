@@ -20,7 +20,7 @@ export function SiteHeader() {
       </div>
 
       {/* Desktop: Wortmarke mittig, Menü darunter (Clubhaus-Stil) */}
-      <div className="mx-auto hidden max-w-6xl px-8 lg:block">
+      <div className="mx-auto hidden max-w-[112rem] px-12 lg:block xl:px-16">
         <Link to="/" className="mx-auto flex w-fit items-center gap-4 pt-7 pb-5" aria-label="KDStV Trifels, zur Startseite">
           <Zirkel className="h-14 w-14 text-silber" />
           <span className="grid text-left">

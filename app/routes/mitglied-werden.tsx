@@ -23,7 +23,7 @@ export default function MitgliedWerden() {
   return (
     <>
       <section className="grid bg-white lg:grid-cols-2">
-        <div className="grid content-center gap-6 px-6 py-16 sm:px-12 lg:px-16">
+        <div className="grid content-center gap-6 px-6 py-16 sm:px-12 lg:px-16 xl:px-24 [&>*]:max-w-2xl">
           <p className="eyebrow">Mitglied werden</p>
           <h1 className="text-5xl sm:text-7xl">
             Wir sind <span className="text-tief">Trifels.</span>
@@ -41,13 +41,13 @@ export default function MitgliedWerden() {
             </Link>
           </div>
         </div>
-        <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[34rem]">
+        <div className="relative aspect-[4/3] lg:aspect-auto lg:h-[78vh] lg:max-h-[52rem] lg:min-h-[34rem]">
           <Photo name="couleur" className="absolute inset-0 h-full w-full" position="center 35%" />
         </div>
       </section>
 
       <section className="on-dark bg-navy text-white" aria-label="Zahlen">
-        <ul className="mx-auto grid max-w-6xl grid-cols-2 lg:grid-cols-4">
+        <ul className="grid grid-cols-2 lg:grid-cols-4">
           {[
             ["1922", "gegründet in München"],
             ["7", "Zimmer im eigenen Haus"],
