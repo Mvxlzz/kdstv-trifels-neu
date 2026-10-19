@@ -1,0 +1,12 @@
+node_modules/
+build/
+.react-router/
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Neue Fotos mit erkennbaren Personen (nicht auf der alten Seite): erst nach Zustimmung ins öffentliche Repo
+public/media/spanferkel-sommerfest.webp
+public/media/gruppe-couleur-tor.webp
+public/media/gruppe-schloss-smoking.webp

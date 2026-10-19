@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@import "@fontsource-variable/cormorant-garamond";
+@import "@fontsource-variable/cormorant-garamond/wght-italic.css";
+@import "@fontsource-variable/source-sans-3";
+
+/* Farben: offizielle CI (Schwarz, Silber, Blau) plus Navy für Kopf und Fuß.
+   Kontraste (WCAG 2.2 AA): Blau nur auf Navy (6,1:1), Tiefblau auf Papier (5,0:1),
+   Silber auf Navy (9,7:1). Weiß auf Blau (2,5:1) nie verwenden. */
+@theme {
+  --color-navy: #1a2540;
+  --color-navy-2: #24314f;
+  --color-blau: #00b0f0;
+  --color-tief: #0071a0;
+  --color-tief-dunkel: #005a80;
+  --color-silber: #d0cece;
+  --color-schwarz: #121212;
+  --color-papier: #f6f6f5;
+  --color-grau: #55595f;
+  --color-rand: #8a8c90;
+  --color-linie: #e2e1df;
+
+  --font-serif: "Cormorant Garamond Variable", Georgia, serif;
+  --font-sans: "Source Sans 3 Variable", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    @apply bg-papier font-sans text-schwarz antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  h1, h2, h3 {
+    @apply font-serif text-navy;
+    font-weight: 600;
+    line-height: 1.1;
+    text-wrap: balance;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-tief);
+    outline-offset: 3px;
+  }
+  .on-dark :focus-visible {
+    outline-color: var(--color-blau);
+  }
+}
+
+@utility eyebrow {
+  @apply text-xs font-bold text-tief uppercase;
+  letter-spacing: 0.16em;
+  :where(.on-dark) & {
+    color: var(--color-blau);
+  }
+}
+
+@utility btn {
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm px-5 text-[0.95rem] font-semibold transition-colors;
+}
+
+@utility btn-primary {
+  @apply btn bg-tief text-white hover:bg-tief-dunkel;
+}
+
+/* Auf Navy: Couleurblau mit Navy-Schrift (6,1:1) */
+@utility btn-blau {
+  @apply btn bg-blau text-navy hover:bg-white;
+}
+
+@utility btn-outline {
+  @apply btn border border-tief text-tief hover:bg-tief hover:text-white;
+}
+
+@utility btn-outline-light {
+  @apply btn border border-silber text-white hover:bg-white hover:text-navy;
+}
+
+@utility link {
+  @apply font-semibold text-tief underline decoration-1 underline-offset-4 hover:text-tief-dunkel;
+}
+
+@utility prose-trifels {
+  & p + p {
+    margin-top: 1em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
