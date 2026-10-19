@@ -4,7 +4,6 @@ import { AufrufBand, BildText, FaqListe, Galerie, TerminListe, WerteBand } from 
 import { Container, SectionHead } from "~/components/Section";
 import { chronik } from "~/data/geschichte";
 import { heroVideo, media, type MediaKey } from "~/data/media";
-import { Zirkel } from "~/components/Zirkel";
 import { pageTitle } from "~/data/site";
 import { oeffentlicheTermine } from "~/data/termine";
 
@@ -52,14 +51,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-navy/70" />
         </div>
         <div className="flex h-full flex-col items-center justify-center px-5 text-center">
-          <Zirkel className="mb-6 h-20 w-20 text-silber sm:h-24 sm:w-24" />
           <h1 className="text-6xl font-semibold text-white sm:text-8xl 2xl:text-9xl">
             KDStV Trifels
             <span className="mt-4 block font-sans text-sm font-semibold tracking-[0.35em] text-white uppercase sm:text-base">
               Katholische Studentenverbindung in München
             </span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-white/90">Seit 1922 im Cartellverband. Farbentragend, nichtschlagend, mit eigenem Haus in Schwabing.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link to="/mitglied-werden" className="btn-blau">
               Lerne uns kennen
