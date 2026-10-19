@@ -42,7 +42,7 @@ export default function MitgliedWerden() {
           </div>
         </div>
         <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[34rem]">
-          <Photo name="couleur" className="absolute inset-0 h-full w-full" position="center 35%" eager />
+          <Photo name="couleur" className="absolute inset-0 h-full w-full" position="center 35%" />
         </div>
       </section>
 

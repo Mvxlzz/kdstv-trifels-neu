@@ -49,10 +49,15 @@ export default function Home() {
             <img src={heroVideo.poster} alt={heroVideo.label} className="absolute inset-0 hidden h-full w-full object-cover motion-reduce:block" />
           </div>
           <div className="grid content-center gap-7 px-6 py-14 sm:px-12 lg:px-16">
-            <p className="eyebrow">Studentenverbindung in München · seit 1922</p>
-            <h1 className="font-serif text-4xl leading-[1.15] font-medium italic text-white sm:text-5xl">
-              „Wir unterstützen uns gegenseitig im Studium, im Beruf und im Leben und stehen füreinander ein.“
+            <h1 className="font-sans text-xs font-bold tracking-[0.16em] text-blau uppercase">
+              KDStV Trifels, katholische Studentenverbindung in München seit 1922
             </h1>
+            <figure className="grid gap-3">
+              <blockquote className="font-serif text-4xl leading-[1.15] font-medium text-white italic sm:text-5xl">
+                <p>„Wir unterstützen uns gegenseitig im Studium, im Beruf und im Leben und stehen füreinander ein.“</p>
+              </blockquote>
+              <figcaption className="text-sm text-silber">Aus unserem Selbstverständnis</figcaption>
+            </figure>
             <p className="max-w-lg text-lg text-silber">
               Katholisch, farbentragend, nichtschlagend. Studenten aller Fächer von allen Münchner Hochschulen, mit eigenem Haus in Schwabing.
             </p>

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { media, type MediaKey } from "~/data/media";
+import { useEffect, useRef, useState } from "react";
+import { foto, type MediaKey } from "~/data/media";
 
 type Props = {
   name: MediaKey;
@@ -11,8 +11,14 @@ type Props = {
 
 /** Foto mit festem Seitenverhältnis-Container vom Aufrufer. Fehlt die Datei, bleibt eine ruhige Fläche stehen. */
 export function Photo({ name, className = "", position = "center", eager = false }: Props) {
-  const m = media[name];
+  const m = foto(name);
+  const ref = useRef<HTMLImageElement>(null);
   const [missing, setMissing] = useState(false);
+  // Vorgerendertes Bild kann vor dem Hydrieren scheitern, dann feuert onError nicht mehr.
+  useEffect(() => {
+    const img = ref.current;
+    if (img?.complete && img.naturalWidth === 0) setMissing(true);
+  }, []);
   if (missing) {
     return (
       <div
@@ -26,6 +32,7 @@ export function Photo({ name, className = "", position = "center", eager = false
   }
   return (
     <img
+      ref={ref}
       src={m.src}
       alt={m.alt}
       width={m.w}
