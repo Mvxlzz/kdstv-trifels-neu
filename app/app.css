@@ -96,3 +96,22 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Startbild: fünf Fotos überblenden nacheinander, je 6 s sichtbar */
+@keyframes hero-fade {
+  0% { opacity: 0; }
+  4% { opacity: 1; }
+  20% { opacity: 1; }
+  24% { opacity: 0; }
+  100% { opacity: 0; }
+}
+.hero-slide {
+  opacity: 0;
+  animation: hero-fade 30s infinite;
+}
+.hero-slide:first-child {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide { animation: none; }
+}

@@ -3,7 +3,8 @@ import type { Route } from "./+types/home";
 import { AufrufBand, BildText, FaqListe, Galerie, TerminListe, WerteBand } from "~/components/Blocks";
 import { Container, SectionHead } from "~/components/Section";
 import { chronik } from "~/data/geschichte";
-import { heroVideo } from "~/data/media";
+import { heroVideo, media, type MediaKey } from "~/data/media";
+import { Zirkel } from "~/components/Zirkel";
 import { pageTitle } from "~/data/site";
 import { oeffentlicheTermine } from "~/data/termine";
 
@@ -23,6 +24,9 @@ const wege = [
   { nr: "3", title: "Mitglied werden", text: "Wie der Weg in den Bund aussieht, was er kostet und was er dir gibt.", to: "/mitglied-werden", cta: "So läuft es ab" },
 ];
 
+// Wie auf der alten Startseite: fünf Fotos im Wechsel
+const heroBilder: MediaKey[] = ["empfang", "festsaal", "hausGarten", "advent", "fuchs"];
+
 const highlights = ["Semesterantrittskneipe", "Sommerlicher Trachtenabend", "104. Stiftungsfestkommers"];
 
 export default function Home() {
@@ -32,7 +36,47 @@ export default function Home() {
 
   return (
     <>
-      <section className="on-dark bg-navy text-white">
+      <section className="on-dark relative isolate h-[calc(100svh-7rem)] min-h-[32rem] overflow-hidden bg-navy text-white lg:h-[calc(100svh-12.25rem)]">
+        <div aria-hidden className="absolute inset-0 -z-10">
+          {heroBilder.map((b, i) => (
+            <img
+              key={b}
+              src={media[b].src}
+              alt=""
+              className="hero-slide absolute inset-0 h-full w-full object-cover"
+              style={{ animationDelay: `${i * 6 - 1}s` }}
+              loading={i === 0 ? "eager" : "lazy"}
+              fetchPriority={i === 0 ? "high" : "auto"}
+            />
+          ))}
+          <div className="absolute inset-0 bg-navy/70" />
+        </div>
+        <div className="flex h-full flex-col items-center justify-center px-5 text-center">
+          <Zirkel className="mb-6 h-20 w-20 text-silber sm:h-24 sm:w-24" />
+          <h1 className="text-6xl font-semibold text-white sm:text-8xl 2xl:text-9xl">
+            KDStV Trifels
+            <span className="mt-4 block font-sans text-sm font-semibold tracking-[0.35em] text-white uppercase sm:text-base">
+              Katholische Studentenverbindung in München
+            </span>
+          </h1>
+          <p className="mt-6 max-w-xl text-lg text-white/90">Seit 1922 im Cartellverband. Farbentragend, nichtschlagend, mit eigenem Haus in Schwabing.</p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link to="/mitglied-werden" className="btn-blau">
+              Lerne uns kennen
+            </Link>
+            <a href="#wer-wir-sind" className="btn-outline-light">
+              Mehr erfahren
+            </a>
+          </div>
+        </div>
+        <a href="#wer-wir-sind" aria-label="Nach unten scrollen" className="absolute bottom-6 left-1/2 -translate-x-1/2 p-2 text-silber hover:text-white motion-safe:animate-bounce">
+          <svg aria-hidden viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </a>
+      </section>
+
+      <section id="wer-wir-sind" className="on-dark bg-navy text-white">
         <div className="grid lg:grid-cols-2">
           <div className="relative aspect-[4/5] max-h-[78vh] w-full overflow-hidden bg-navy-2 lg:aspect-auto lg:h-[82vh] lg:max-h-[56rem] lg:min-h-[36rem]">
             <video
@@ -49,9 +93,7 @@ export default function Home() {
             <img src={heroVideo.poster} alt={heroVideo.label} className="absolute inset-0 hidden h-full w-full object-cover motion-reduce:block" />
           </div>
           <div className="grid content-center gap-7 px-6 py-14 sm:px-12 lg:px-16 xl:px-24 [&>*]:max-w-2xl">
-            <h1 className="font-sans text-xs font-bold tracking-[0.16em] text-blau uppercase">
-              KDStV Trifels, katholische Studentenverbindung in München seit 1922
-            </h1>
+            <p className="eyebrow">Wer wir sind</p>
             <figure className="grid gap-3">
               <blockquote className="font-serif text-4xl leading-[1.15] font-medium text-white italic sm:text-5xl 2xl:text-6xl">
                 <p>„Wir unterstützen uns gegenseitig im Studium, im Beruf und im Leben und stehen füreinander ein.“</p>
