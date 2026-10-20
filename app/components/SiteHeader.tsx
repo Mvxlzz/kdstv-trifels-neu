@@ -4,7 +4,7 @@ import { mainNav, site } from "~/data/site";
 import { Zirkel } from "./Zirkel";
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-  `whitespace-nowrap px-1 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.08em] 2xl:text-[0.8rem] 2xl:tracking-[0.14em] transition-colors hover:text-blau ${
+  `whitespace-nowrap px-1 py-2 text-[0.95rem] font-medium transition-colors hover:text-blau ${
     isActive ? "text-blau" : "text-silber"
   }`;
 
@@ -28,7 +28,7 @@ export function SiteHeader() {
           <Zirkel className="h-12 w-12 text-silber transition-colors hover:text-white" />
         </Link>
         <div className="flex items-center justify-end gap-6">
-          <Link to="/mitglied-werden" className="btn-blau min-h-9 px-4 text-[0.8rem] tracking-[0.12em] uppercase">
+          <Link to="/mitglied-werden" className="btn-blau min-h-10 px-4 text-[0.95rem]">
             Mitglied werden
           </Link>
           <NavLink to="/login" className={navLinkClass}>

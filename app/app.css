@@ -1,25 +1,27 @@
 @import "tailwindcss";
-@import "@fontsource-variable/cormorant-garamond";
-@import "@fontsource-variable/cormorant-garamond/wght-italic.css";
+@import "@fontsource/dm-serif-display/latin-400.css";
+@import "@fontsource/dm-serif-display/latin-400-italic.css";
 @import "@fontsource-variable/source-sans-3";
 
-/* Farben: offizielle CI (Schwarz, Silber, Blau) plus Navy für Kopf und Fuß.
+/* Variante „Couleur“: weiße Seite, CI-Schwarz statt Navy für dunkle Flächen.
+   Der Token heißt weiter navy, damit alle Seiten ohne Umbau mitziehen.
+   Farben: offizielle CI (Schwarz, Silber, Blau).
    Kontraste (WCAG 2.2 AA): Blau nur auf Navy (6,1:1), Tiefblau auf Papier (5,0:1),
    Silber auf Navy (9,7:1). Weiß auf Blau (2,5:1) nie verwenden. */
 @theme {
-  --color-navy: #1a2540;
-  --color-navy-2: #24314f;
+  --color-navy: #121212;
+  --color-navy-2: #262626;
   --color-blau: #00b0f0;
   --color-tief: #0071a0;
   --color-tief-dunkel: #005a80;
   --color-silber: #d0cece;
   --color-schwarz: #121212;
-  --color-papier: #f6f6f5;
+  --color-papier: #ffffff;
   --color-grau: #55595f;
   --color-rand: #8a8c90;
-  --color-linie: #e2e1df;
+  --color-linie: #e3e3e3;
 
-  --font-serif: "Cormorant Garamond Variable", Georgia, serif;
+  --font-serif: "DM Serif Display", Georgia, serif;
   --font-sans: "Source Sans 3 Variable", system-ui, sans-serif;
 }
 
@@ -37,8 +39,10 @@
   }
   h1, h2, h3 {
     @apply font-serif text-navy;
-    font-weight: 600;
-    line-height: 1.1;
+    font-weight: 400;
+    /* DM Serif Display hat nur einen Schnitt, kein künstliches Fett */
+    font-synthesis: none;
+    line-height: 1.05;
     text-wrap: balance;
     hyphens: auto;
     overflow-wrap: break-word;
@@ -131,4 +135,17 @@
 .hero-balken {
   transform-origin: left;
   animation: hero-fortschritt 6s linear forwards;
+}
+
+.font-serif {
+  font-synthesis: none;
+}
+
+/* Hervorhebung im Fließtext: Couleurblau unterstrichen, wie ein Band */
+@utility band-unterstrich {
+  text-decoration: underline;
+  text-decoration-color: var(--color-blau);
+  text-decoration-thickness: 0.14em;
+  text-underline-offset: 0.16em;
+  text-decoration-skip-ink: none;
 }
