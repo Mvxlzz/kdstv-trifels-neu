@@ -41,4 +41,4 @@ npm run preview
 
 ## Fotos mit Personen
 
-Drei neue Fotos (Spanferkel, Couleur vor dem Tor, Smoking vor dem Schloss) zeigen erkennbare Bundesbrüder und waren noch nicht auf der alten Seite. Sie stehen in `.gitignore`, bis die Abgebildeten zugestimmt haben. Ohne die Dateien zeigt die Seite an diesen Stellen eine graue Fläche „Foto folgt“.
+Drei neue Fotos (Spanferkel, Couleur vor dem Tor, Smoking vor dem Schloss) zeigen erkennbare Bundesbrüder und waren noch nicht auf der alten Seite. Die Abgebildeten haben zugestimmt (bestätigt von Max am 20.10.2026), deshalb liegen die Fotos seitdem im Repository.

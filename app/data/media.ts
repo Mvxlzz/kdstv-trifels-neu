@@ -1,7 +1,6 @@
 /**
  * Alle Fotos an einer Stelle. `personen: true` heißt: Personen sind erkennbar.
- * Neue Fotos davon liegen nicht im öffentlichen Repository (siehe .gitignore),
- * bis die Abgebildeten zugestimmt haben. Fehlt eine Datei beim Build, nimmt <Photo> das `ersatz`-Bild.
+ * Die Abgebildeten haben der Veröffentlichung zugestimmt. Fehlt eine Datei beim Build, nimmt <Photo> das `ersatz`-Bild.
  */
 type Foto = { src: string; alt: string; w: number; h: number; personen?: boolean; ersatz?: string };
 

@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { media, type MediaKey } from "~/data/media";
+import { foto, type MediaKey } from "~/data/media";
 
 const bilder: { key: MediaKey; titel: string }[] = [
+  { key: "couleur", titel: "In Couleur" },
   { key: "empfang", titel: "Sommerabend" },
+  { key: "spanferkel", titel: "Sommerfest" },
   { key: "festsaal", titel: "Festsaal" },
+  { key: "schloss", titel: "Im Smoking" },
   { key: "hausGarten", titel: "Trifelshaus" },
-  { key: "advent", titel: "Advent" },
-  { key: "fuchs", titel: "Bar" },
 ];
 
 /** Vollbild-Start mit Fotowechsel, Fortschrittsbalken und Pause (WCAG 2.2.2). */
@@ -34,7 +35,7 @@ export function StartBild() {
         {bilder.map((b, i) => (
           <img
             key={b.key}
-            src={media[b.key].src}
+            src={foto(b.key).src}
             alt=""
             className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ${i === aktiv ? "opacity-100" : "opacity-0"}`}
             loading={i === 0 ? "eager" : "lazy"}
@@ -63,7 +64,7 @@ export function StartBild() {
         </div>
 
         <div className="flex items-end gap-3 sm:gap-5">
-          <ol className="grid flex-1 grid-cols-5 gap-3 sm:gap-5">
+          <ol className="grid flex-1 gap-3 sm:gap-5" style={{ gridTemplateColumns: `repeat(${bilder.length}, minmax(0, 1fr))` }}>
             {bilder.map((b, i) => (
               <li key={b.key}>
                 <button
