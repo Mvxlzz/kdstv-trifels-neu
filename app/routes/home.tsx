@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/home";
 import { AufrufBand, FaqListe, TermineVorschau, werte } from "~/components/Blocks";
-import { Band, Siegel } from "~/components/Couleur";
+import { Band, BandStreifen, Siegel } from "~/components/Couleur";
 import { Impressionen } from "~/components/Impressionen";
 import { Photo } from "~/components/Photo";
 import { Container } from "~/components/Section";
@@ -66,11 +66,7 @@ export default function Home() {
         <div className="absolute right-[6%] bottom-[12%] hidden lg:block">
           <Siegel to="/trifelshaus" oben="Wohnen" unten="Zimmer im Trifelshaus anfragen" />
         </div>
-        <div aria-hidden className="grid lg:hidden">
-          <span className="h-3 bg-schwarz" />
-          <span className="h-3 bg-silber" />
-          <span className="h-3 bg-blau" />
-        </div>
+        <BandStreifen className="lg:hidden" />
       </section>
 
       <section aria-label="Trifels in Zahlen" className="border-y border-linie bg-white">
@@ -93,12 +89,12 @@ export default function Home() {
             <p className="max-w-4xl font-serif text-3xl leading-[1.3] text-schwarz sm:text-4xl">
               Seit <span className="band-unterstrich">über hundert Jahren</span> treffen sich bei Trifels Studenten aller Fächer und Münchner Hochschulen. Wir
               leben nach <span className="band-unterstrich">Religio, Scientia und Amicitia</span>, tragen zu Festen{" "}
-              <span className="band-unterstrich">Band und Mütze</span> in Schwarz, Silber und Blau und fechten nicht. Was bleibt, sind Freunde fürs Leben,
+              <span className="band-unterstrich">Band und Mütze</span> in Silber-Blau auf schwarzem Grund und fechten nicht. Was bleibt, sind Freunde fürs Leben,
               vom ersten Semester bis zum <span className="band-unterstrich">Alten Herrn</span>.
             </p>
           </div>
           <figure className="relative">
-            <Band className="absolute -top-10 -right-24 -z-0 h-40 w-[140%] rotate-[-8deg]" />
+            <Band className="absolute -top-10 -right-24 -z-0 h-40 w-[140%] rotate-[-8deg] flex-col" />
             <div className="relative aspect-[4/3] overflow-hidden border-8 border-white bg-linie">
               <Photo name="couleur" position="center 35%" className="absolute inset-0 h-full w-full" />
             </div>

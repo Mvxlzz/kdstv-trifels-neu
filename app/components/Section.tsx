@@ -20,7 +20,7 @@ export function SectionHead({ eyebrow, title, intro, id }: { eyebrow: string; ti
 export function PageHero({ eyebrow, title, intro, children }: { eyebrow: string; title: string; intro?: ReactNode; children?: ReactNode }) {
   return (
     <section className="on-dark relative isolate overflow-hidden bg-navy text-white">
-      <Band className="absolute top-[-40%] right-[8%] -z-10 hidden h-[200%] w-28 rotate-[32deg] opacity-90 md:flex" />
+      <Band className="absolute top-[-40%] right-[8%] -z-10 hidden h-[200%] w-28 rotate-[32deg] md:flex" />
       <Container className="grid gap-5 py-20 sm:py-28">
         <p className="eyebrow">{eyebrow}</p>
         <h1 className="max-w-3xl text-5xl text-white sm:text-7xl">{title}</h1>

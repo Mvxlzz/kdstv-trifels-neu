@@ -1,12 +1,17 @@
 import { Link } from "react-router";
 
-/** Das Band in den Farben Schwarz, Silber, Blau, wie es über der Brust getragen wird. Rein dekorativ. */
+/**
+ * Das Band, wie es über der Brust getragen wird: Silber-Blau auf schwarzem Grund,
+ * also schmale schwarze Kanten außen, Silber und Blau breit in der Mitte (wie die Fahne).
+ * Eine dünne silberne Kontur hält die schwarzen Kanten auch auf dunklem Grund sichtbar. Rein dekorativ.
+ */
 export function Band({ className = "" }: { className?: string }) {
   return (
-    <div aria-hidden className={`pointer-events-none flex ${className}`}>
-      <span className="flex-1 bg-schwarz" />
-      <span className="flex-1 bg-silber" />
-      <span className="flex-1 bg-blau" />
+    <div aria-hidden className={`pointer-events-none flex outline-2 outline-silber ${className}`}>
+      <span className="flex-[1] bg-schwarz" />
+      <span className="flex-[3] bg-silber" />
+      <span className="flex-[3] bg-blau" />
+      <span className="flex-[1] bg-schwarz" />
     </div>
   );
 }
@@ -14,10 +19,11 @@ export function Band({ className = "" }: { className?: string }) {
 /** Waagerechtes Band als Trenner, z. B. über dem Fuß */
 export function BandStreifen({ className = "" }: { className?: string }) {
   return (
-    <div aria-hidden className={`grid ${className}`}>
-      <span className="h-2 bg-schwarz" />
-      <span className="h-2 bg-silber" />
-      <span className="h-2 bg-blau" />
+    <div aria-hidden className={`grid border-y-2 border-silber ${className}`}>
+      <span className="h-1 bg-schwarz" />
+      <span className="h-3 bg-silber" />
+      <span className="h-3 bg-blau" />
+      <span className="h-1 bg-schwarz" />
     </div>
   );
 }
