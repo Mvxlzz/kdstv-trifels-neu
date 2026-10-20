@@ -73,7 +73,7 @@ export default function UnserBund() {
           <div className="grid gap-4">
             <p className="eyebrow">Farbentragend</p>
             <h2 id="leben" className="text-4xl sm:text-5xl">
-              Schwarz, Silber, Blau
+              Silber-Blau auf Schwarz
             </h2>
             <p className="text-lg text-grau">
               Zu Kneipen, Festen und Gottesdiensten tragen wir Band und Mütze in unseren Farben. Aktive Studenten und Alte Herren im Beruf feiern, diskutieren und
