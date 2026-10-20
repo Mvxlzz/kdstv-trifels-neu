@@ -84,17 +84,26 @@ export default function Home() {
         </ul>
       </section>
 
-      <section aria-labelledby="bund" className="bg-white py-24 sm:py-32">
-        <Container className="grid gap-10">
-          <h2 id="bund" className="max-w-4xl text-5xl sm:text-7xl">
-            Ein Bund für das Studium und die Zeit danach
-          </h2>
-          <p className="max-w-5xl font-serif text-3xl leading-[1.3] text-schwarz sm:text-4xl lg:text-[2.75rem]">
-            Seit <span className="band-unterstrich">über hundert Jahren</span> treffen sich bei Trifels Studenten aller Fächer und Münchner Hochschulen. Wir
-            leben nach <span className="band-unterstrich">Religio, Scientia und Amicitia</span>, tragen zu Festen{" "}
-            <span className="band-unterstrich">Band und Mütze</span> in Schwarz, Silber und Blau und fechten nicht. Was bleibt, sind Freunde fürs Leben,
-            vom ersten Semester bis zum <span className="band-unterstrich">Alten Herrn</span>.
-          </p>
+      <section aria-labelledby="bund" className="overflow-x-clip bg-white py-24 sm:py-32">
+        <Container className="grid gap-14 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:items-center lg:gap-20">
+          <div className="grid gap-10">
+            <h2 id="bund" className="max-w-4xl text-5xl sm:text-7xl">
+              Ein Bund für das Studium und die Zeit danach
+            </h2>
+            <p className="max-w-4xl font-serif text-3xl leading-[1.3] text-schwarz sm:text-4xl">
+              Seit <span className="band-unterstrich">über hundert Jahren</span> treffen sich bei Trifels Studenten aller Fächer und Münchner Hochschulen. Wir
+              leben nach <span className="band-unterstrich">Religio, Scientia und Amicitia</span>, tragen zu Festen{" "}
+              <span className="band-unterstrich">Band und Mütze</span> in Schwarz, Silber und Blau und fechten nicht. Was bleibt, sind Freunde fürs Leben,
+              vom ersten Semester bis zum <span className="band-unterstrich">Alten Herrn</span>.
+            </p>
+          </div>
+          <figure className="relative">
+            <Band className="absolute -top-10 -right-24 -z-0 h-40 w-[140%] rotate-[-8deg]" />
+            <div className="relative aspect-[4/3] overflow-hidden border-8 border-white bg-linie">
+              <Photo name="couleur" position="center 35%" className="absolute inset-0 h-full w-full" />
+            </div>
+            <figcaption className="mt-3 text-grau">Bundesbrüder in Couleur</figcaption>
+          </figure>
         </Container>
       </section>
 
@@ -160,8 +169,8 @@ export default function Home() {
                 <Zirkel key={i} className="h-8 w-auto sm:h-10" />
               ))}
             </div>
-            <div className="absolute right-[10%] bottom-0 h-[42%] w-[48%] border-8 border-white">
-              <Photo name="herrenzimmer" className="h-full w-full" />
+            <div className="absolute right-[10%] bottom-0 h-[46%] w-[40%] border-8 border-white">
+              <Photo name="spanferkel" position="center 30%" className="h-full w-full" />
             </div>
           </div>
         </Container>
@@ -184,7 +193,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <Impressionen bilder={["herrenzimmer", "bar", "garten", "empfang", "spanferkel", "advent", "schloss", "fuchs", "festsaal"]} />
+      <Impressionen bilder={["schloss", "herrenzimmer", "empfang", "bar", "advent", "garten", "festsaal", "fuchs"]} />
 
       <section aria-label="Unsere Prinzipien" className="on-dark bg-navy text-white">
         <ul className="mx-auto grid max-w-[112rem] divide-y divide-white/15 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
