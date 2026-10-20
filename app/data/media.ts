@@ -6,7 +6,7 @@ type Foto = { src: string; alt: string; w: number; h: number; personen?: boolean
 
 export const media = {
   fuchs: { src: "/media/fuchs-bar-kerzen.webp", alt: "Der Trifels-Fuchs mit Couleurmütze auf der Bar, davor Kerzenleuchter und Sektgläser", w: 1200, h: 1600 },
-  hausFlagge: { src: "/media/haus-flagge.webp", alt: "Das Trifelshaus mit der Fahne in Schwarz, Silber und Blau", w: 1080, h: 1350 },
+  hausFlagge: { src: "/media/haus-flagge.webp", alt: "Das Trifelshaus mit der Fahne in Silber-Blau auf schwarzem Grund", w: 1080, h: 1350 },
   hausGarten: { src: "/media/haus-garten-sommer.webp", alt: "Das Trifelshaus von der Gartenseite im Sommer, mit Terrasse und Wintergarten", w: 1080, h: 1350 },
   garten: { src: "/media/garten-terrasse-fruehling.webp", alt: "Garten und Terrasse des Trifelshauses im Frühling", w: 1200, h: 1600 },
   herrenzimmer: { src: "/media/herrenzimmer-chesterfield.webp", alt: "Herrenzimmer mit Chesterfield-Sofas und Bücherregal", w: 1200, h: 1600 },
